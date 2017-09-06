@@ -5,7 +5,7 @@
     state: present
 - name: Update modified webfiles
   copy:
-    src: /ansible/playbooks/src/html
+    src: "{{playbook_dir}}/src/html"
     dest: "{{apache_www_dir}}/"
     owner: root
     group: root
