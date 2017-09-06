@@ -56,3 +56,21 @@ The Tasks utilized don't differ too much from each OS. Either the package name i
 
 * Verify apache is present
   * CentOS
+    * Package name: httpd
+	* State:
+      * latest - To be updated (When update available)
+	  * present - Installs if not on system. Does not update if already on the system.
+  * Ubuntu
+    * Package name: apache2
+	* State:
+      * latest - To be updated (When update available)
+	  * present - Installs if not on system. Does not update if already on the system.
+	* Package name: apache2-doc
+	* State:
+      * latest - To be updated (When update available)
+	  * present - Installs if not on system. Does not update if already on the system.
+	* Package name: apache2-utils
+	* State:
+      * latest - To be updated (When update available)
+	  * present - Installs if not on system. Does not update if already on the system.
+* Update modified 
