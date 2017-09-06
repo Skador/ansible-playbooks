@@ -36,7 +36,7 @@ nginx_update.yml roles:
 Each Role has five directories within that manage the required steps
 
 * defaults
-  ** Holds the default values for directory location on the server and other variables
+  * Holds the default values for directory location on the server and other variables
 * handlers
   
   Contains the handlers called in the tasks
