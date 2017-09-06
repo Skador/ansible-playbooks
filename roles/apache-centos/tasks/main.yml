@@ -1,0 +1,23 @@
+---
+- name: Verify apache is present
+  yum:
+    name: httpd
+    state: present
+- name: Update modified webfiles
+  copy:
+    src: /ansible/playbooks/src/html
+    dest: "{{apache_www_dir}}/"
+    owner: root
+    group: root
+    mode: 0644
+- name: Update modified config
+  template:
+    src: httpd.conf.j2
+    dest: "{{apache_conf_dir}}/httpd.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart apache
+- name: Ensure apache is running
+  action: service name=httpd state=started

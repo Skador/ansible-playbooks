@@ -1,0 +1,5 @@
+apache2_dir: "/etc/apache2"
+apache2_conf_dir: "{{apache2_dir}}"
+apache2_www_dir: "/var/www"
+
+http_port: 80

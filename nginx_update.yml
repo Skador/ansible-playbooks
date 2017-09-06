@@ -1,0 +1,10 @@
+---
+- hosts: web
+  gather_facts: yes
+  become: yes
+  serial: 1
+  roles:
+    - role: nginx-centos
+      when: ansible_distribution == 'CentOS'
+    - role: nginx-ubuntu
+      when: ansible_distribution == 'Ubuntu'

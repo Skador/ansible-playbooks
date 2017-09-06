@@ -1,0 +1,30 @@
+---
+- name: Verify nginx repo file is present
+  template:
+    src: nginx.repo.j2
+    dest: /etc/yum.repos.d/nginx.repo
+    owner: root
+    group: root
+    mode: 0644
+- name: Verify nginx is present
+  yum:
+    name: nginx
+    state: present
+- name: Update modified webfiles
+  copy:
+    src: "{{playbook_dir}}/src/html"
+    dest: "{{nginx_www_dir}}/"
+    owner: root
+    group: root
+    mode: 0644
+- name: Update modified config
+  template:
+    src: nginx.conf.j2
+    dest: "{{nginx_conf_dir}}/nginx.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart nginx
+- name: Ensure nginx is running
+  action: service name=nginx state=started

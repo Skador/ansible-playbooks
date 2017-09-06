@@ -1,0 +1,6 @@
+apache_dir: "/etc/httpd"
+apache_conf_dir: "{{apache_dir}}/conf"
+apache_www_dir: "/var/www"
+apache_html_dir: "{{apache_www_dir}}/html"
+
+http_port: 80
