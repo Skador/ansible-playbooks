@@ -50,3 +50,14 @@ Each Role has five directories within that manage the required steps
 * templates
 
   Has the configuration templates that are used
+
+---
+
+### Tasks
+
+The Tasks utilized don't differ too much from each OS. Either the package name is different, more packages are needed, or files need to be placed in a different location.
+
+##### apache
+
+* Verify apache is present
+ * CentOS
