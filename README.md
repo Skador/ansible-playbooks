@@ -129,5 +129,20 @@ The Tasks utilized don't differ too much from each OS. Either the package name i
   * CentOS and Ubuntu
     * Package name: nginx
 	* State: started
-
 ---
+
+### Handler
+
+Only handler used in this setup is the restart handler.
+
+* apache
+  * CentOS
+    * Package name: httpd
+    * State: restarted
+  * Ubuntu
+    * Package name: apache2
+    * State: restarted
+* nginx
+  * CentOS and Ubuntu
+    * Package name: nginx
+    * State: restarted 
