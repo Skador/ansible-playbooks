@@ -1,6 +1,6 @@
 nginx_dir: "/etc/nginx"
 nginx_conf_dir: "{{nginx_dir}}"
-nginx_www_dir: "/usr/share/nginx"
+nginx_www_dir: "/var/www"
 nginx_html_dir: "{{apache_www_dir}}/html"
 
 http_port: 80
