@@ -96,4 +96,38 @@ The Tasks utilized don't differ too much from each OS. Either the package name i
     * Package name: apache2
     * State: started
 
+#### nginx
+* Verify nginx repo file is present
+  * CentOS
+    * Uses a template to add the nginx.repo file to /etc/yum.repos.d/
+  * Ubuntu
+    * nginx is already available for Ubuntu
+* Verify nginx is present
+  * Verifies that nginx is present on the machine, can be changed to have nginx always update (When update is available)
+  * CentOS
+    * Package installer: yum
+    * Package name: nginx
+	* State:
+      * latest - To be updated (When update available)
+	  * present - Installs if not on system. Does not update if already on the system.
+  * Ubuntu
+    * Package installer: apt
+    * Package name: nginx
+	* State:
+      * latest - To be updated (When update available)
+	  * present - Installs if not on system. Does not update if already on the system.
+* Update modified webfiles
+  * CentOS and Ubuntu
+    * Copies any updated or modified files from src/html directory to the correct html directory for the OS
+* Update modified config
+  * CentOS and Ubuntu
+    * Uses a template to update the existing conf file for the specific OS
+	* Both use - nginx.conf
+	* Sends a notify to the "restart nginx" handler
+* Ensure nginx is running
+  * Last step that verifies that nginx has started and is currently running
+  * CentOS and Ubuntu
+    * Package name: nginx
+	* State: started
+
 ---
