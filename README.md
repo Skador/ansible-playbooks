@@ -2,6 +2,19 @@
 
 ---
 
+## Tests
+
+1. apache_up_cent_web.log
+  * Contains the infomation for the completed centos apache configuration file and the web files update tests.
+2. apache_up_ubuntu.log
+  * Contains the information for the completed ubuntu apache configuration file test.
+3. nginx_up_cent_web.log
+  * Contains the information for the completed centos nginx configuration file and the web files update tests.
+4. nginx_up_ubuntu.log
+  * Contains the information for the completed ubuntu nginx configuration file test.
+
+---
+
 ## Prereqs
 
 * Host file in place
@@ -45,6 +58,24 @@ Each Role has five directories within that manage the required steps
   * Houses all tasks to be ran within the Role
 * templates
   * Has the configuration templates that are used
+
+---
+
+### Handler
+
+Only handler used in this setup is the restart handler.
+
+* apache
+  * CentOS
+    * Package name: httpd
+    * State: restarted
+  * Ubuntu
+    * Package name: apache2
+    * State: restarted
+* nginx
+  * CentOS and Ubuntu
+    * Package name: nginx
+    * State: restarted 
 
 ---
 
@@ -129,20 +160,3 @@ The Tasks utilized don't differ too much from each OS. Either the package name i
   * CentOS and Ubuntu
     * Package name: nginx
 	* State: started
----
-
-### Handler
-
-Only handler used in this setup is the restart handler.
-
-* apache
-  * CentOS
-    * Package name: httpd
-    * State: restarted
-  * Ubuntu
-    * Package name: apache2
-    * State: restarted
-* nginx
-  * CentOS and Ubuntu
-    * Package name: nginx
-    * State: restarted 
